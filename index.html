@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>Library JS</title>
+</head>
+<body>
+  <main class="container py-3">
+    <h1 class="text-center">Library JS</h1>
+    <button id="addbook-btn" class="btn btn-info">New Book</button>
+    <form id="addbook-form" class="mt-4">
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input id="author" class="form-control" type="text" placeholder="Author" required/>
+      </div>
+      
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input id="title" class="form-control" type="text" placeholder="Title" required/>
+      </div>
+      <div class="form-group">
+        <label for="pages">Number of pages</label>
+        <input id="pages" class="form-control" type="number" placeholder="Pages" required/>
+      </div>
+      
+      <div class="form-group form-check">
+        <input class="form-check-input" id="readStatus" type="checkbox"/>
+        <label for="readStatus" class="form-check-label">Read?</label>
+      </div>
+      <div class="d-flex justify-content-end">
+
+        <button id="submit-btn" class="btn btn-success" type="submit">Add Book</button>
+      </div>
+    </form>
+    <div id="books-list" class="py-5">
+    </div>
+  </main>
+
+
+  <script src="assets/js/bundle.min.js"></script>
+</body>
+</html>
