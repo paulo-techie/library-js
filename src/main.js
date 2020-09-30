@@ -1,12 +1,15 @@
-const addbookForm    = document.querySelector('#addbook-form');
-const addbookBtn     = document.querySelector('#addbook-btn');
+import bookRenderer from './dom';
+import Book from './book';
+
+const addbookForm = document.querySelector('#addbook-form');
+const addbookBtn = document.querySelector('#addbook-btn');
 const booksContainer = document.querySelector('#books-list');
 
 const storedLibrary = JSON.parse(localStorage.getItem('library')) || [];
 
-let myLibrary = storedLibrary.map(({ author, title, pages, readStatus }) => {
-  return new Book(author, title, pages, readStatus);
-});
+let myLibrary = storedLibrary.map(({
+  author, title, pages, readStatus,
+}) => new Book(author, title, pages, readStatus));
 
 function renderBook(book) {
   const rootNode = bookRenderer.createStructure({
@@ -19,7 +22,7 @@ function renderBook(book) {
       book.toggleRead();
       localStorage.setItem('library', JSON.stringify(myLibrary));
       bookRenderer.update(rootNode, book);
-    }
+    },
   });
 
   booksContainer.appendChild(rootNode);
@@ -28,7 +31,9 @@ function renderBook(book) {
 
 myLibrary.forEach((book) => renderBook(book));
 
-function addBookToLibrary({ title, pages, author, readStatus }) {
+function addBookToLibrary({
+  title, pages, author, readStatus,
+}) {
   const book = new Book(author, title, pages, readStatus);
 
   myLibrary.push(book);
@@ -43,10 +48,10 @@ addbookBtn.addEventListener('click', () => {
 
 addbookForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const author     = document.querySelector('#author'),
-        title      = document.querySelector('#title'),
-        pages      = document.querySelector('#pages'),
-        readStatus = document.querySelector('#readStatus');
+  const author = document.querySelector('#author');
+  const title = document.querySelector('#title');
+  const pages = document.querySelector('#pages');
+  const readStatus = document.querySelector('#readStatus');
 
   addBookToLibrary({
     author: author.value,
@@ -55,6 +60,8 @@ addbookForm.addEventListener('submit', (e) => {
     readStatus: readStatus.checked,
   });
 
-  author.value       = title.value = pages.value = '';
+  author.value = '';
+  title.value = '';
+  pages.value = '';
   readStatus.checked = false;
 });
