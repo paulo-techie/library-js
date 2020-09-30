@@ -3,36 +3,24 @@
 > Libary-js is a simple introductory javascript project to demonstrate how to create a form using HTML and use Javascript to populate it.
 
 
+![](screenshot.png)
+
 ## Built With
 
 - JavaScript
 - HTML
 - CSS
 
+## [Live demo](https://raw.githack.com/paulo-techie/library-js/feature-library/index.html)
 
-### Prerequisites
-    
-    A computer running Windows, Linux or MacOS
+### how to run locally
 
-### Setup
-
-    # Windows
-
-    Download and run Node and NPM @ https://nodejs.org/en/download/
-
-    # Mac/Linux
-
-    Open Terminal and type: nvm install node
-
-
-### Run
-
-    Copy all the project files to a folder.
-
-    Open Terminal and change directory to the project folder
-    
-    Open index.html on your browser
-
+- Install [Node.js](https://nodejs.org/en/download/)
+- Clone this repository by running `git clone https://github.com/paulo-techie/library-js.git`
+- Change your current working directory to the project `cd library-js`
+- Run `npm install`
+- Run `npm start`
+- Enjoy
 
 
 ## Authors
