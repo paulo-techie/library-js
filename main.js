@@ -109,7 +109,7 @@ function addBookToLibrary() {
 addbookBtn.addEventListener('click', () => {
   addbookForm.style.display = 'block';
 });
-submitBtn.addEventListener('click', (e) => {
+addbookForm.addEventListener('submit', (e) => {
   e.preventDefault();
   addBookToLibrary();
 });
