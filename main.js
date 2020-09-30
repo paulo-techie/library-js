@@ -2,7 +2,6 @@ let myLibrary = [];
 
 const addbookForm = document.querySelector('#addbook-form');
 const addbookBtn = document.querySelector('#addbook-btn');
-const submitBtn = document.querySelector('#submit-btn');
 const booksContainer = document.querySelector('#books-list');
 
 addbookForm.style.display = 'none';
